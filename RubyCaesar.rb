@@ -72,7 +72,7 @@ if ARGV[0] == "-h"
     puts("USAGE")
     puts("\t./RubyCaesar str n\n\n")
     puts("DESCRIPTION")
-    puts("\tn\tstring to be encrypted or decryped")
+    puts("\tstr\tstring to be encrypted or decryped")
     puts("\tn\t0 for encrypt, 1 for decrypt")
     exit()
 end
@@ -89,13 +89,13 @@ end
 
 #print result
 
-puts "text: #{text}"
+puts "Text: #{text}\n\n"
 
 
 caesar = Caesar.new(21)
 cipherText = caesar.encrypt( text)
 if (ARGV[1] == "0")
-puts "Ciphered text: #{cipherText}"
+puts "Encrypted text: #{cipherText}"
 elsif (ARGV[1] == "1")
-puts "Deciphered text: #{caesar.decrypt( text)}"
+puts "Decrypted text: #{caesar.decrypt( text)}"
 end
