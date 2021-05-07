@@ -19,7 +19,7 @@ class Error
         true if Float(@string) rescue false
     end
     def validate
-        chars = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
+        chars = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a + (' '..' ').to_a
         @string.chars.detect {|ch| !chars.include?(ch)}.nil?
     end
 
@@ -73,7 +73,8 @@ text = ARGV[0]
 errorStr = Error.new(ARGV[0])
 errorNb = Error.new(ARGV[1])
 #checking errors
-if ((!errorNb.is_number?) || (ARGV[1].to_i > 1) || ((ARGV[1].to_i).negative?) || !errorStr.validate)
+(ARGV.length != 2)? exit(84): true 
+if ((!errorNb.is_number?) || (ARGV[1].to_i > 1) || ((ARGV[1].to_i).negative?) || (!errorStr.validate && ARGV[1].to_i == 0))
     exit (84)
 end
 
