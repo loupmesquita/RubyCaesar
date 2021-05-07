@@ -68,6 +68,18 @@ class Caesar
   
 end
 
+if ARGV[0] == "-h"
+    puts("USAGE")
+    puts("\t./RubyCaesar str n s\n\n")
+    puts("DESCRIPTION")
+    puts("\tn\tstring to be encrypted or decryped")
+    puts("\tn\t0 for encrypt, 1 for decrypt")
+    puts("\tn\t0 for encrypt, 1 for decrypt")
+    puts("\tn\tshift (optionnal), 21 by default")
+    exit()
+end
+
+
 text = ARGV[0]
 
 errorStr = Error.new(ARGV[0])
